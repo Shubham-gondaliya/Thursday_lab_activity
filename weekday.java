@@ -1,11 +1,11 @@
 //1)Write a Java program that takes a number from the user and generates an integer between 1 and 7 and displays the name of the weekday.
 import java.util.Scanner; 
-class weekday
+class weekday					//main class
 {
 	public static void main(String[] args) {
 		int weekday;
 		System.out.println("enter week day");
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);      //taking a value for user
 		weekday = sc.nextInt();
 
 		switch(weekday)
