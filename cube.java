@@ -9,11 +9,10 @@ import java.util.Scanner;
     int i,no,cube;
     System.out.println("Enter a No :- ");
     Scanner sc = new Scanner(System.in);
-		    no = sc.nextInt();
+    no = sc.nextInt();
 
      for(i=1;i<=no;i++)
      {
-         
          cube = i*i*i;
          System.out.println("no is " +i+ " cube of no :-" +i+" is "  +cube );
          // System.out.println("\n");
