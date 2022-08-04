@@ -5,9 +5,18 @@ class Equalityoftwoarray
 {
 		public static void main( String args[] )
 		{
-			int [] arr1 = {10,20,30,40,80};
-			int [] arr2 = {10,20,30,40,80};
-			System.out.println("Equality of two array is :- "	//use equal method.
-				+Arrays.equals(arr1, arr2));
- 	    }
+			int [] ar1 = {10,20,30,40,80};
+			int [] ar2 = {10,20,30,40,80};
+			boolean ans = Arrays.equals(ar1,ar2);		//use equals methos.
+
+			if(ans==true)									//for print message using if-else statment.
+			{
+				System.out.println("array are equals");
+			}	
+		        else 
+		        {
+		    	System.out.println("array are not equals");
+		        }
+ 	        }
+			
 }
