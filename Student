@@ -1,0 +1,77 @@
+package com.exam1;
+
+import java.sql.Date;
+
+
+
+class Student{
+	private String name;
+	protected int id;
+	double grade;
+	public int age;
+
+	public Boolean isPassed(double grade){
+		return null;
+	}
+
+	public void setName(String name){
+		this.name = name;
+	}
+	public void setId(int id){
+		this.id = id;
+	}
+	public String getName(){
+		return this.name;
+	}
+	public int getId(){
+		return this.id;
+	}
+}
+class Grad extends Student{
+	public Boolean isPassed(double grade){
+		if(grade>80.0)
+			return true;
+		else
+			
+		return false;
+	}
+}
+class Undergrad extends Student{
+	public Boolean isPassed(double grade){
+		if(grade>70.0)
+			return true;
+		else
+		return false;
+	}
+}
+
+
+public class pro2{
+	public static void main(String args[]){
+		Grad g = new Grad();
+		Undergrad ug = new Undergrad();
+		//For Graduate student
+		g.setName("sahil");
+		g.setId(5);
+		g.age = 18;
+		g.grade=75;
+		System.out.println("A graduate student "+g.getName()+"  id is :- "+g.getId()+" and  age is :- "+g.age+" the  grade is:-  "+g.grade);
+		if(g.isPassed(g.grade))
+			System.out.println("pass");
+		else
+			System.out.println("fail");
+		//For undergraduate student
+		ug.setName("shubham");
+		ug.setId(6);
+		ug.grade = 80;
+		ug.age = 22;
+		System.out.println("A graduate student "+ug.getName()+"  id is :- "+ug.getId()+" and  age is :- "+ug.age+" the  grade is:-  "+ug.grade);
+		if(ug.isPassed(ug.grade))
+			System.out.println("pass");
+		else
+			System.out.println("fail");
+
+		
+		
+	}
+}
