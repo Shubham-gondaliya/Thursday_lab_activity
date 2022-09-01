@@ -1,0 +1,29 @@
+package com.thursday;
+import java.util.*;
+
+	public class Third 
+	{  
+		int a, b;  
+
+   void swapNum(Third s)  //create a method
+   {  
+	   int t;   
+		t = s.a;   //swap logic
+		s.a = s.b; //swap logic
+		s.b = t;  //swap logic
+	}  
+	public static void main(String args[])   
+		{  
+		  
+		Third t = new Third();   //create object
+		Scanner sc = new Scanner(System.in);  //get value from user               
+		System.out.print("Enter the first number: ");  
+		t.a = sc.nextInt();  
+		System.out.print("Enter the second number: ");  
+		t.b = sc.nextInt();  
+		 
+		t.swapNum(t);  
+		  
+		System.out.println("After swapping: a= " + t.a + ", b= " + t.b);  //print swaping value
+		}  
+		}  
