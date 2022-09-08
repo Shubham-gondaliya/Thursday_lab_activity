@@ -1,0 +1,23 @@
+package com.exam1;
+
+import java.util.Scanner;
+import java.io.FileReader;
+public class LongestWord 
+{  
+    public static void main(String[] args) throws Exception   //throws exception
+    {
+      FileReader reader = new FileReader("E:\\test.txt");  //create a file reader class
+      Scanner sc = new Scanner(reader);
+                 
+       int longestLenght=0;  
+       String word;
+       
+       //Display the contents of the file
+       while(sc.hasNext())       //moving loop
+       {    
+           String nextWord = sc.next();
+           System.out.println(nextWord);           
+          
+        }
+    }
+}
