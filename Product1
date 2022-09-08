@@ -1,0 +1,35 @@
+package com.exam1;
+
+class myexception extends Exception
+{
+
+	public myexception(String s) {
+		super();           // calling the constructor of parent Exception  
+
+		
+	}
+	
+}
+
+public class Product1 {
+	
+	static void productcheck(int weight) throws Exception
+	{
+		if(weight<100)
+		{
+			 throw new Exception("Product is invalid");  // throw an object of user defined exception  
+		}
+		else
+		{
+			System.out.println("weight of the product is :- "+weight);
+		}
+	}
+
+	public static void main(String[] args) throws Exception {     // main method   
+		
+		Product1 p = new Product1();
+		productcheck(80);   // calling the method   
+	}
+
+}
+
