@@ -1,0 +1,59 @@
+package com.exam1;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+class Book
+{
+	String bookid;      
+	String title;
+	String author;
+	String category;
+	float price;
+	public Object name;
+	
+	public Book(String bookid, String title, String author, String category, float price) {  //parameterized constructor
+		this.bookid = bookid;
+		this.title = title;
+		this.author = author;
+		this.category = category;
+		this.price = price;
+	}	
+	
+}
+public class BookStore {
+
+
+	public static  void main(String[] args) {   //main method
+		ArrayList<Book> al = new ArrayList<Book>();  //collection
+	    Book b = new Book("Beee","prac","nisarg","scince",100);    //create a object
+	    
+	    Book b1 = new Book("Barr ","part1","deep","Fiction",200);
+	    
+	    Book b2 = new Book("Boss","part2","sahil","Technology",300);
+	    
+	    Book b3 = new Book("Bigb","part3","hardik","other",400);
+	   
+	    al.add(b);
+	    al.add(b1);
+	    al.add(b2);
+	    al.add(b3);
+	  
+	   
+	        //search a book based on title and if found display the details
+	  		List<String>searchByTitle =al.stream().map(p -> p.title).collect(Collectors.toList());
+	  		System.out.println("title name are :- "+searchByTitle);
+	  	
+	  		//search a book based on author and if found display the details
+	  		List<String>searchByAuthor =al.stream().map(p1 -> p1.author).collect(Collectors.toList());
+	  		System.out.println("author name are :- "+searchByAuthor);
+	  		
+	  		for(Book b12:al)   //moving a loop for display all 
+			{
+				System.out.println(b12.bookid+ " " +b12.title+ " " +b12.author+ " " +b12.category+ " " +b12.category);
+			}
+	
+}
+}
+
