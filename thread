@@ -1,0 +1,60 @@
+package com.thursday;
+
+import java.util.Random;
+
+class RandomNumberThread extends Thread {
+	public void run() {
+		Random random = new Random();   // creating an object of Random class   
+		for (int i = 0; i < 10; i++) {    //moving loop
+			int randomInteger = random.nextInt(100);  // Generates random integers 0 to 99    
+			System.out.println("Random Integer generated : " +randomInteger);
+			if((randomInteger%2) == 0) {    //put the even number condition.
+				SquareThread sThread = new SquareThread(randomInteger);//creating an object of SquareThread class   
+				sThread.start();  //start thread
+			}
+			else {
+				CubeThread cThread = new CubeThread(randomInteger); //creating an object of CubeThread class   
+				cThread.start(); //start thread
+			}
+			try {
+				Thread.sleep(1000);   // for pause the execution
+			} 
+			catch (Exception e) {
+				System.out.println(e);
+			}
+		}
+	}
+}
+class SquareThread extends Thread {  //create a class
+	int number;
+
+	SquareThread(int number) {   // constructor
+		this.number=number;
+	}
+
+	public void run() {  //create a run method
+		System.out.println("Square of  :- " + number + " = " + (number * number));
+	}
+}
+
+class CubeThread extends Thread {   //create a class
+	int number;
+
+	CubeThread(int number) {   // constructor
+		this.number=number;
+	}
+
+	public void run() { //create a run method
+		System.out.println("Cube of  :- " + number + " = " + number * number * number);
+	}
+}
+
+public class thread {
+
+	public static void main(String[] args) {
+		RandomNumberThread rnThread = new RandomNumberThread();  //create a  RandomNumberThread class object
+		rnThread.start();   //for start thread
+
+	}
+
+}
