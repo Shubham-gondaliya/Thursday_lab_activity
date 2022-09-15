@@ -1,0 +1,91 @@
+package com.thursday;
+
+public class Multithreaded {  //main class
+
+	    public static void main(String args[]) 
+
+	    {
+
+	    	thread1 th1 = new thread1("thread1: ");//create a object of thrad1 class
+
+	    	thread1 th2= new thread1("thread2: "); //create a object of thrad1 class
+
+	        th1.start();    //for start thread
+
+	        th2.start();    //for start thread
+
+	        boolean th1IsAlive = true;   
+
+	        boolean th2IsAlive = true;
+
+	        do {
+
+	           if (th1IsAlive && !th1.isAlive()) {  //check the condition for thread
+
+	        	   th1IsAlive = false;
+
+            	System.out.println("Thread 1 is dead.");
+ 
+	           }
+
+	           if (th2IsAlive && !th2.isAlive()) {   //check the condition for thread
+
+	               th2IsAlive = false;
+
+	               System.out.println("Thread 2 is dead.");
+
+	           }
+
+	        } while(th1IsAlive || th2IsAlive);   //check the condition for thread
+
+	    }
+
+	}
+ 
+	class thread1 extends Thread  //create a class
+
+	{
+
+	static String message[] ={ "Java", "is", "hot,", "aromatic,", "and", "invigorating."}; //create a string array
+    
+	public thread1(String id)  //create constructor
+	    {
+	        super(id);
+	    }
+
+    void randomWait()  //create a method  for pause the execution
+
+    {
+
+        try {
+
+           sleep(1000);    //for pause the execution 
+
+        } catch (Exception e) {   //handle exception
+
+           System.out.println(e);
+
+    }
+
+    }
+
+	    public void run()   //create a run method
+
+	    {
+
+	        String name = getName();   
+
+	        for (int i=0;i<message.length;++i) {  //moving loop for length
+
+	           randomWait(); //calling method
+
+	           System.out.println(name + message[i]);
+
+	        }
+
+	    }
+
+	    
+	}
+
+
