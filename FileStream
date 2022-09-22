@@ -1,0 +1,37 @@
+package com.thursday;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;       //import package
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class FileStream {
+
+	public static void main(String[] args) throws Exception {     //throws exception 
+		
+			FileOutputStream fout=new FileOutputStream("E:\\a.txt");   //create a FileOutputStream class with file location
+			DataOutputStream dout=new DataOutputStream(fout);          //create a DataOutputStream class 
+			dout.writeInt(5);                                   //write intdata 
+			dout.writeChar('s');                                //write singlechar
+			dout.flush();                                       //using flush method
+			dout.close();   //close 
+			fout.close();   //close
+			
+		
+	
+			FileInputStream fin =new FileInputStream("E:\\a.txt");   //create a FileinputStream class with file location
+			DataInputStream din = new DataInputStream(fin);           //create a DatainputStream class
+			int count=din.available();                               // check availabe count            
+			byte[] b=new byte[count];                             //crete a array
+			din.read(b);                                  //read data
+			for(byte b1:b)                              //moving for loop
+			{
+				System.out.println((char)b1);         //print data
+				
+			}
+		
+		
+
+	}
+
+}
