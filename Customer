@@ -1,0 +1,101 @@
+package com.thursday;
+
+import java.util.stream.Stream;   
+
+class FruitBasket         //create class
+{
+	String fruitName;         //create a instance ver
+	int weightInKgs;
+	int PricePerKgs;
+	int total;
+	public String getFruitName() {      //use get method
+		return fruitName;
+	}
+	public void setFruitName(String fruitName) {   //use set method
+		this.fruitName = fruitName;
+	}
+	public int getWeightInKgs() {    //create method
+		return weightInKgs;
+	}
+	public void setWeightInKgs(int weightInKgs) {       //use set method
+		this.weightInKgs = weightInKgs;
+	}
+	public int getPricePerKgs() {         //use get method
+		return PricePerKgs;
+	}
+	public void setPricePerKgs(int pricePerKgs) {        //use set method
+		PricePerKgs = pricePerKgs;
+	}
+}
+
+class FruitBasketUtility    //create a class
+{
+	String fruitName;        //create a instance var
+	int weightInKgs;
+	int PricePerKgs;
+	private FruitBasket b;
+	public String getFruitName() {
+		return fruitName;
+	}
+	public void setFruitName(String fruitName) {        //use set method
+		this.fruitName = fruitName;
+	}
+	public int getWeightInKgs() {     //create method
+		return weightInKgs;
+	}
+	public void setWeightInKgs(int weightInKgs) {    //use set method
+		this.weightInKgs = weightInKgs;
+	}
+	public int getPricePerKgs() {       //create  method
+		return PricePerKgs;
+	}
+	public void setPricePerKgs(int pricePerKgs) {  //use set method
+		PricePerKgs = pricePerKgs;
+	}
+	  
+	public void addToBasket(FruitBasket b)       //create  method
+	{
+		this.b=b;
+		
+	}
+	
+	public int calculateBill(Stream<FruitBasket> fruitBasketStream)       //create  method
+	{
+		return PricePerKgs;
+	}
+}
+
+public class Customer {    //main class
+
+	public static void main(String[] args) {   //main method
+		FruitBasket fb=new FruitBasket();  //create a object
+		fb.setFruitName("watermalon");    //call set method
+		
+		System.out.println("fruit name is :"+fb.getFruitName());  //print and call get method
+		
+		fb.setPricePerKgs(50);        //call set method
+		System.out.println("price of fruit per kg is:"+fb.getPricePerKgs());   //print and call get method
+		
+		fb.setWeightInKgs(5);              //call set method
+		System.out.println("weight of fruit in kg is :"+fb.getWeightInKgs());   //print and call get method
+		
+		
+		
+		FruitBasketUtility fbasket=new FruitBasketUtility();   //create a object
+		fbasket.setFruitName("apple");    //call set method
+		System.out.println("fruit name is:"+fbasket.getFruitName());   //print and call get method
+		
+		fbasket.setPricePerKgs(250);   //call set method
+		System.out.println("Price of fruit per kg is:"+fbasket.getPricePerKgs());  //print and call get method
+		
+		fbasket.setWeightInKgs(1);    //call set method
+		System.out.println("weight of fruit in kg is:"+fbasket.getWeightInKgs());    //print and call get method
+		
+		
+		
+
+	}
+
+	
+
+}
