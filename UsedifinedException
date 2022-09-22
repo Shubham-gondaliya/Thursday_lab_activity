@@ -1,0 +1,69 @@
+package com.thursday;
+
+class Account     //create a class
+{
+	
+	private int balance=10000;     // create a instance variable
+	
+	public int balance()      //create method
+	{
+		return balance;      
+	}
+	
+	public void withdraw(int amount) throws NotBoundException         //create method and throws exception    
+	{
+		if(amount>balance)                                              //check condition with if statment
+		{
+			throw new NotBoundException(String.format("current balance is less then req amount",balance,amount));     //declare exceptions
+		}
+			balance =balance-amount;
+	}
+	
+	
+	public void deposite(int amount)  //create method
+	{
+		if(amount <=0)     //check cond with statment
+		{
+			throw new IllegalArgumentException(String.format("invalid amount",amount));  //declare exceptions
+		}
+		
+	}
+}
+
+public class NotBoundException extends RuntimeException      //create a class 
+{
+	private String message;       // create a instance variable
+	
+	public NotBoundException(String message)   //create method
+	{
+		this.message=message;
+	}
+	
+	public NotBoundException(Throwable cause,String message)     //create method
+	{
+		super(cause);
+		this.message=message;
+	}
+	public String getMessage()    //use get method
+	{
+		return message;
+	}
+}
+
+
+
+
+public class UsedifinedException {    //main class
+
+	public static void main(String[] args) {     //main method
+		Account ac=new Account();       //create a object
+		System.out.println("current balance :"+ac.balance());
+		System.out.println(" after withdraw moneyyy ....");
+		ac.withdraw(3000);                                   //call method
+		System.out.println("current balance"+ac.balance());
+		ac.withdraw(1000);
+		
+
+	}
+
+}
